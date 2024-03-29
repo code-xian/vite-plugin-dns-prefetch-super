@@ -3,6 +3,14 @@ import {glob} from "glob";
 import urlRegex from 'url-regex'
 import fs from 'fs'
 
+/**
+ * @description dns-prefetch
+ * @param limit
+ * @param excludeDnsPrefetchUrl
+ * @param includeDnsPrefetchUrl
+ * @returns {{closeBundle(): Promise<void>, name: string}}
+ *
+ */
 const vitePluginDnsPrefetch = ({
  limit = 20,
  excludeDnsPrefetchUrl = [],

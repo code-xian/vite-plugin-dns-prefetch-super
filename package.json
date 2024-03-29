@@ -8,8 +8,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "release": "bumpp --commit --push --tag && npm run build && npm publish",
-    "test": "bumpp --push"
+    "release": "bumpp --commit --push --tag && npm run build && npm publish"
   },
   "files": [
     "dist",
