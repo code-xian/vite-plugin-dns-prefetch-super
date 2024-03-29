@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-dns-prefetch-super",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A vite plugin for dns prefetch",
   "main": "./dist/main.js",
   "module": "./dist/main.js",
@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "release": "bumpp --commit --push --tag && npm run build && npm publish"
+    "release": "bumpp --commit --push --tag && npm run build && npm publish",
+    "test": "bumpp --push"
   },
   "files": [
     "dist",
