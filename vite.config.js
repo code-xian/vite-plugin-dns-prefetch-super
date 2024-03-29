@@ -8,7 +8,7 @@ export default defineConfig({
   ],
   build: {
     rollupOptions: {
-      external: ['glob'],
+      external: ['glob','fs'],
     },
     lib: {
       entry: path.resolve(__dirname, 'script/index.js'),
