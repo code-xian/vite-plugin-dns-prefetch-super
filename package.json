@@ -1,0 +1,39 @@
+{
+  "name": "vite-plugin-dns-prefetch-super",
+  "version": "1.0.0",
+  "description": "A vite plugin for dns prefetch",
+  "main": "./dist/main.js",
+  "module": "./dist/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "release": "bumpp --commit --push --tag && npm publish"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "zhangzexian",
+  "license": "MIT",
+  "keywords": [
+    "vite",
+    "plugin",
+    "dns",
+    "dns-prefetch"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/main.js",
+      "require": "./dist/main.cjs"
+    }
+  },
+  "devDependencies": {
+    "vite": "^5.2.6",
+    "vite-plugin-inspect": "^0.8.1"
+  },
+  "dependencies": {
+    "glob": "^10.3.12",
+    "node-html-parser": "^6.1.12",
+    "url-regex": "^5.0.0"
+  }
+}
