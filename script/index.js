@@ -1,7 +1,7 @@
 import {parse} from "node-html-parser";
 import { glob } from "glob";
 import urlRegex from 'url-regex'
-import fs from 'fs'
+const fs = require("fs");
 
 const vitePluginDnsPrefetch = () => {
   const excludeDnsPrefetchUr = []
