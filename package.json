@@ -14,6 +14,10 @@
     "dist",
     "LICENSE"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/code-xian/vite-plugin-dns-prefetch-super"
+  },
   "author": "zhangzexian",
   "license": "MIT",
   "keywords": [
