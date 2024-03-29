@@ -4,11 +4,12 @@ import urlRegex from 'url-regex'
 import fs from 'fs'
 
 const vitePluginDnsPrefetch = ({
-   limit = 20,
-   excludeDnsPrefetchUrl = []
+ limit = 20,
+ excludeDnsPrefetchUrl = [],
+ includeDnsPrefetchUrl = [] // 优先级最高，如果limit只限3个，但是该入参有4个，还是以includeDnsPrefetchUrl为优先
 } = {}) => {
   const urlPattern = /(https?:\/\/[^/]*)/i
-  const urls = new Set()
+  let urls = new Set()
 
   async function searchDomain() {
     const files = await glob('dist/**/*.{html,css,js}', {ignore: 'node_modules/**'});
@@ -19,14 +20,20 @@ const vitePluginDnsPrefetch = ({
         matches.forEach(url => {
           const match = url.match(urlPattern)
           if (match && match[1] && !excludeDnsPrefetchUrl.includes(match[1])) {
-            urls.add(match[1])
             if (urls.size >= limit) {
               return
             }
+            urls.add(match[1])
           }
         })
       }
     }
+    let tempUrls = [...urls];
+    includeDnsPrefetchUrl.forEach((item, index) => {
+      tempUrls.splice(index, 1, item);
+    })
+    urls = new Set(tempUrls)
+
   }
 
   async function insertLinks() {
