@@ -6,7 +6,7 @@ import fs from 'fs'
 const vitePluginDnsPrefetch = ({
    limit = 20,
    excludeDnsPrefetchUrl = []
-                               }) => {
+} = {}) => {
   const urlPattern = /(https?:\/\/[^/]*)/i
   const urls = new Set()
 
